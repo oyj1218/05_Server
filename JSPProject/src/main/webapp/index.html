@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSP 프로젝트</title>
+</head>
+<body>
+    <h1>EL (Expression Language)</h1>
+
+    <pre>
+        JSP의 표현식(Expression)을
+        조금 더 효율적이고 간단하게 작성할 수 있도록 고안된 언어
+    </pre>
+
+    <pre>
+        절대 경로 : /JSPProject/EL.html
+
+        상대 경로 : 
+        - 현재 : EL.html
+    </pre>
+    <ul>
+        <li>
+            <!-- 상대 경로 작성법 -->
+            <a href="EL.html">1. EL(Expression Language)</a>
+        </li>
+        <li>
+            <!-- 절대 경로 작성법 -->
+            <a href="/JSPProject/EL.html">1. EL(Expression Language)</a>
+        </li>
+        
+        <li>
+            <a href="scope.html">2. Servlet/JSP 내장 객체와 범위(scope)</a>
+        </li>
+
+        <li>
+            <a href="jstl_1.jsp">3. JSTL -1</a>
+        </li>
+
+        <li>
+            <a href="jstl_2.jsp">4. JSTL -2</a>
+        </li>
+
+        <li>
+            <a href="member.html">5. 통합 테스트</a>
+        </li>
+    </ul>
+
+    <!-- <a href="/JSPProject/test/test1.html">test1</a> -->
+    <a href="test/test1.html">test1</a>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <h3>GET 방식 요청</h3>
+
+    <form action="/JSPProject/login" method="GET">
+        <!-- 
+            요청 주소 : /JSPProject/login
+            데이터 전달 방식 : get (주소 뒤에 데이터가 붙어서 전달됨)
+        -->
+
+        ID : <input type="text" name="inputId"> <br>
+        PW : <input type="password" name="inputPw"> <br>
+        <button type="submit">로그인</button>
+
+    </form>
+
+    <hr>
+
+    <h3>JSP 테스트</h3>
+    <form action="/JSPProject/pizzaOrder" method="get">
+        피자 선택(1만원) : 
+        <select name="pizza">
+            <option>고구마 피자</option>
+            <option>콤비네이션 피자</option>
+            <option>포테이토 피자</option>
+            <option>라자냐 피자</option>
+            <option>하와이안 피자</option>
+        </select>
+
+        <br><br>
+
+        사이즈(L 선택 시 3천원 추가) : 
+        <label> R <input type="radio" name="size" value="R"></label>
+        <label> L <input type="radio" name="size" value="L"></label>
+
+        <br><br>
+
+        수량 : <input type="number" name="amount" min="1" max="10" value="1">판
+
+        <button>주문하기</button>
+
+    </form>
+
+    <hr>
+
+    <h3>회원가입</h3>
+
+    <form action="/JSPProject/signUp" method="post">
+        <table>
+            <tr>
+                <th>아이디 : </th>
+                <td>
+                    <input type="text" name="memberId">
+                </td>
+            </tr>            
+
+            <tr>
+                <th>비밀번호 : </th>
+                <td>
+                    <input type="text" name="memberPw">
+                </td>
+            </tr>  
+
+            <tr>
+                <th>이름 : </th>
+                <td>
+                    <input type="text" name="memberName">
+                </td>
+            </tr>  
+
+            <tr>
+                <th>자기소개 : </th>
+                <td>
+                    <textarea name="intro" rows="3" cols="30"></textarea>
+                </td>
+            </tr>  
+        </table>
+
+        <button>회원가입</button>
+        <button type="reset">초기화</button>
+    </form>
+</body>
+</html>
