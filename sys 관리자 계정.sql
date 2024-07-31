@@ -1,0 +1,9 @@
+-- 오라클 11G 이전 버전의 SQL 작성을 가능하게 하는 구문.
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+
+-- [관리자 계정] MEMBER 계정 생성
+CREATE USER findrink IDENTIFIED BY findrink1234;
+
+-- [관리자 계정] CONNECT, RESOURCE + CREATE VIEW 권한 부여 + 객체 생성 공간 할당
+GRANT CONNECT, RESOURCE, CREATE VIEW TO findrink;
+ALTER USER findrink DEFAULT TABLESPACE SYSTEM QUOTA UNLIMITED ON SYSTEM;
